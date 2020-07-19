@@ -21,6 +21,16 @@ app.get("/", (req, res) => {
   res.render("home", params);
 });
 
+app.get("/about", (req, res) => {
+  const params = { aboutContent: aboutContent };
+  res.render("about", params);
+});
+
+app.get("/contact", (req, res) => {
+  const params = { contactContent: contactContent };
+  res.render("contact", params);
+});
+
 app.listen(3000, function () {
   console.log("Server started on port 3000");
 });
