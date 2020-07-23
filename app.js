@@ -25,6 +25,10 @@ app.get("/", (req, res) => {
   res.render("home", params);
 });
 
+app.get("/posts/:title", (req, res) => {
+  console.log(req.params.title);
+});
+
 app.get("/about", (req, res) => {
   const params = { aboutContent: aboutContent };
   res.render("about", params);
