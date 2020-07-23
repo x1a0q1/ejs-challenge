@@ -5,7 +5,11 @@
 
 <% posts.forEach(post => { %>
     <h1><%= post.title %></h1>
-    <p><%= post.content %></p>
+    <% if (post.content.length === 100) { %>
+        <p><%= post.content %><span><a href=<%= `posts/${post.title.replace(/[&\/\\#, +()$~%.'":*?<>{}]/g, '-')}` %>>Read More</a></span></p>
+    <% } else { %>
+        <p><%= post.content %></p>
+    <% } %> 
 <% }); %>
 
 <%- include("partials/footer"); -%>
