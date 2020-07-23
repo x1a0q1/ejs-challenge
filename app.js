@@ -27,6 +27,12 @@ app.get("/", (req, res) => {
 
 app.get("/posts/:title", (req, res) => {
   console.log(req.params.title);
+
+  posts.forEach((post) => {
+    if (post.title === req.params.title) {
+      console.log("Matched!");
+    }
+  });
 });
 
 app.get("/about", (req, res) => {
