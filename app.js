@@ -29,7 +29,11 @@ app.get("/", (req, res) => {
 app.get("/posts/:title", (req, res) => {
   posts.forEach((post) => {
     if (_.lowerCase(post.title) === _.lowerCase(req.params.title)) {
-      console.log("Matched!");
+      const params = {
+        title: post.title,
+        content: post.content,
+      };
+      res.render("post", params);
     }
   });
 });
